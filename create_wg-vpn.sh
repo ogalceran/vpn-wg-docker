@@ -1,10 +1,11 @@
 #!/bin/bash
+set -e
 
 # WireGuard Easy Auto-Deploy Script (preconfigurat)
 
-# Configuració fixa
-WG_HOST="raspberrypi.local"
-LANG="es"
+# Configuració fixa (pots canviar-la aquí)
+WG_HOST=""
+LANG="ca"
 PORT="51821"
 WG_PORT="51820"
 WG_DEFAULT_ADDRESS="10.8.0.0"
@@ -67,13 +68,19 @@ services:
 EOF
 }
 
-# Iniciar servei
+# Iniciar servei si no està ja funcionant
 start_container() {
+  if docker ps --format '{{.Names}}' | grep -q '^wg-easy$'; then
+    echo "✅ WireGuard Easy ja està funcionant!"
+    echo "🌐 Accedeix a: http://$WG_HOST:$PORT"
+    exit 0
+  fi
+
+  echo "🚀 Instal·lant WireGuard Easy..."
   mkdir -p wireguard
   create_docker_compose
 
   echo "✅ Fitxer docker-compose.yml creat correctament."
-  echo "🚀 Iniciant WireGuard Easy..."
   docker compose up -d
 
   echo "✅ WireGuard Easy està funcionant."

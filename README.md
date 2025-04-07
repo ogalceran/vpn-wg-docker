@@ -2,20 +2,6 @@
 
 This script can build using wg-easy repository the docker-compose.yml to be able to deploy our VPN using UI.
 
-# WireGuard Easy
-
-[![Build & Publish Docker Image to Docker Hub](https://github.com/wg-easy/wg-easy/actions/workflows/deploy.yml/badge.svg?branch=production)](https://github.com/wg-easy/wg-easy/actions/workflows/deploy.yml)
-[![Lint](https://github.com/wg-easy/wg-easy/actions/workflows/lint.yml/badge.svg?branch=master)](https://github.com/wg-easy/wg-easy/actions/workflows/lint.yml)
-![Docker](https://img.shields.io/docker/pulls/weejewel/wg-easy.svg)
-[![Sponsor](https://img.shields.io/github/sponsors/weejewel)](https://github.com/sponsors/WeeJeWel)
-![GitHub Stars](https://img.shields.io/github/stars/wg-easy/wg-easy)
-
-You have found the easiest way to install & manage WireGuard on any Linux host!
-
-<p align="center">
-  <img src="./assets/screenshot.png" width="802" />
-</p>
-
 ## Features
 * All-in-one: WireGuard + Web UI.
 * Easy installation, simple to use.

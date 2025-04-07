@@ -4,32 +4,15 @@ set -e
 # WireGuard Easy Auto-Deploy Script (preconfigurat)
 
 # Configuració fixa (pots canviar-la aquí)
-WG_HOST=""
+WG_HOST="172.30.15.10"
 LANG="ca"
 PORT="51821"
 WG_PORT="51820"
 WG_DEFAULT_ADDRESS="10.8.0.0"
-WG_DEFAULT_DNS="1.1.1.1"
+WG_DEFAULT_DNS="192.168.30.2, 1.1.1.1"
 UI_TRAFFIC_STATS="true"
 UI_CHART_TYPE="2"
-WG_ALLOWED_IPS="0.0.0.0/0"
-
-# Comprova si Docker i Docker Compose estan instal·lats
-check_dependencies() {
-  echo "🔍 Comprovant Docker i Docker Compose..."
-
-  if ! command -v docker &> /dev/null; then
-    echo "❌ Docker no està instal·lat. Instal·la'l primer: https://docs.docker.com/get-docker/"
-    exit 1
-  fi
-
-  if ! docker compose version &> /dev/null; then
-    echo "❌ Docker Compose V2 no està disponible. Instal·la'l o assegura't de tenir la versió adequada."
-    exit 1
-  fi
-
-  echo "✅ Docker i Docker Compose estan correctament instal·lats."
-}
+WG_ALLOWED_IPS="172.18.0.0/16"
 
 # Crear fitxer docker-compose.yml
 create_docker_compose() {
@@ -89,5 +72,4 @@ start_container() {
 
 # Execució principal
 echo "=== Instal·lació automàtica de WireGuard Easy ==="
-check_dependencies
 start_container

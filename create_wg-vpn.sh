@@ -64,7 +64,7 @@ start_container() {
   create_docker_compose
 
   echo "✅ Fitxer docker-compose.yml creat correctament."
-  docker compose up -d
+  docker-compose up -d
 
   echo "✅ WireGuard Easy està funcionant."
   echo "🌐 Accedeix a la interfície web a: http://$WG_HOST:$PORT"

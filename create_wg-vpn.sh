@@ -72,4 +72,5 @@ start_container() {
 
 # Execució principal
 echo "=== Instal·lació automàtica de WireGuard Easy ==="
+create_docker_compose
 start_container

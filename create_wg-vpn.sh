@@ -4,15 +4,15 @@ set -e
 # WireGuard Easy Auto-Deploy Script (preconfigurat)
 
 # Configuració fixa (pots canviar-la aquí)
-WG_HOST="172.30.15.10"
+WG_HOST=""
 LANG="ca"
 PORT="51821"
 WG_PORT="51820"
-WG_DEFAULT_ADDRESS="10.8.0.0"
-WG_DEFAULT_DNS="192.168.30.2, 1.1.1.1"
+WG_DEFAULT_ADDRESS="10.8.0.x"
+WG_DEFAULT_DNS=""
 UI_TRAFFIC_STATS="true"
 UI_CHART_TYPE="2"
-WG_ALLOWED_IPS="172.18.0.0/16"
+WG_ALLOWED_IPS=""
 
 # Crear fitxer docker-compose.yml
 create_docker_compose() {
